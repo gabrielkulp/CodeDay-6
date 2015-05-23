@@ -4,12 +4,13 @@ using System.Collections;
 public class NetworkManager : MonoBehaviour
 {
 	public GUIStyle style;
-	private const string typeName = "Crystal Mayhem";
-	private const string gameName = "Crystal Mayhem";
+	private const string typeName = "Drone";
+	private const string gameName = "Drone";
 	
 	private bool isRefreshingHostList = false;
 	private HostData[] hostList;
-	
+
+	public GameObject dronePrefab;
 	public GameObject playerPrefab;
 	
 	void OnGUI()
@@ -47,7 +48,7 @@ public class NetworkManager : MonoBehaviour
 	
 	void OnServerInitialized()
 	{
-		SpawnPlayer();
+		SpawnDrone();
 		Cursor.visible = false;
 	}
 	
@@ -86,6 +87,12 @@ public class NetworkManager : MonoBehaviour
 	{
 		Network.Instantiate(playerPrefab, Vector3.up * 5, Quaternion.identity, 0);
 	}
+
+	private void SpawnDrone()
+	{
+		Network.Instantiate(dronePrefab, Vector3.up * 5, Quarternion.identity, 0);
+	}
+
 	void OnDisconnectedFromServer(){
 		Cursor.visible = true;
 	}
