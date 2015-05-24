@@ -20,7 +20,7 @@ function Update () {
 }
 
 function Shoot () {
-	GameObject.Instantiate(shot, guns[index].transform.position, guns[index].transform.rotation);
+	Network.Instantiate(shot, guns[index].transform.position, guns[index].transform.rotation);
 	index++;
 	if (index == guns.Length)
 		index = 0;
