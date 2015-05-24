@@ -85,11 +85,13 @@ public class NetworkManager : MonoBehaviour
 	
 	private void SpawnPlayer()
 	{
+		Debug.Log ("Andrey is a dumbass");
 		Network.Instantiate(playerPrefab, Vector3.up * 20, Quaternion.identity, 0);
 	}
 	
 	private void SpawnDrone()
 	{
+		Debug.Log ("Andrey is a dumbass");
 		Network.Instantiate(dronePrefab, Vector3.up * 5, Quaternion.identity, 0);
 	}
 	
