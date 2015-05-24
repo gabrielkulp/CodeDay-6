@@ -18,7 +18,7 @@ function Update () {
 	  expo.Evaluate(Input.GetAxis("Yaw")) * yawRate,
 	  expo.Evaluate(Input.GetAxis("Roll")) * pitchRollRate
 	  )/* * ((Input.GetAxis("Throttle") + 1) * 0.25 + 0.75)*/);
-	
+	Debug.Log(Input.GetAxis("Pitch"));
 	
 	//Stability
 	var torque : Vector3;
