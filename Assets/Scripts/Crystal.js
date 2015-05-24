@@ -8,9 +8,9 @@ var rotationDirection:Vector3;
 var rotationSpeed:double = 50;
 
 function Update(){
-	if (crystalDamage <= 0 || PlayerGUI.health <=0){
-		Application.LoadLevel("GameOver");
-	}
+//	if (crystalDamage <= 0 || PlayerGUI.health <=0){
+//		Application.LoadLevel("GameOver");
+//	}
 	
 	switch (rotationDirectionValue){
 		case 0:

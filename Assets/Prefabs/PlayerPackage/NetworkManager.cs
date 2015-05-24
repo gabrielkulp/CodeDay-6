@@ -10,7 +10,7 @@ public class NetworkManager : MonoBehaviour
 	private bool isRefreshingHostList = false;
 	private HostData[] hostList;
 	
-	public GameObject dronePrefab;
+//	public GameObject dronePrefab;
 	public GameObject playerPrefab;
 	
 	void OnGUI()
@@ -48,7 +48,7 @@ public class NetworkManager : MonoBehaviour
 	
 	void OnServerInitialized()
 	{
-		SpawnDrone();
+//		SpawnDrone();
 		Cursor.visible = false;
 	}
 	
@@ -88,10 +88,10 @@ public class NetworkManager : MonoBehaviour
 		Network.Instantiate(playerPrefab, Vector3.up * 5, Quaternion.identity, 0);
 	}
 	
-	private void SpawnDrone()
+/*	private void SpawnDrone()
 	{
 		Network.Instantiate(dronePrefab, Vector3.up * 5, Quarternion.identity, 0);
-	}
+	}*/
 	
 	void OnDisconnectedFromServer(){
 		Cursor.visible = true;

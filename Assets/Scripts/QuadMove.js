@@ -42,7 +42,7 @@ function Update () {
 
 
 //Networking
-function OnTriggerEnter () {
+/*function OnTriggerEnter () {
 	if (GetComponent.<NetworkView>().isMine){
 	currentSpeed = moveSpeed;
 	onGround = true;
@@ -54,7 +54,7 @@ function OnTriggerExit () {
 	currentSpeed = flySpeed;
 	onGround = false;
 	}
-}
+}*/
 
 var lastSynchronizationTime:float = 0f;
 var syncDelay:float = 0f;
