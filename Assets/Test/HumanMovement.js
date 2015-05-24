@@ -6,7 +6,7 @@ var fireTrigger:float = 5;
 var ammo = 100;
 var sphere:GameObject;
 function Start () {
-	Screen.lockCursor = true;
+	Cursor.visible = false;
 }
 
 function Update () {
