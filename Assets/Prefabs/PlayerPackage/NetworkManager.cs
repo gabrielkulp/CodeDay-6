@@ -10,7 +10,7 @@ public class NetworkManager : MonoBehaviour
 	private bool isRefreshingHostList = false;
 	private HostData[] hostList;
 	
-//	public GameObject dronePrefab;
+	public GameObject dronePrefab;
 	public GameObject playerPrefab;
 	
 	void OnGUI()
@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviour
 				for (int i = 0; i < hostList.Length; i++)
 				{
 					//if (GUI.Button(new Rect(400, 100 + (110 * i), 300, 100), hostList[i].gameName))
-					//JoinServer(hostList[i]);
+						//JoinServer(hostList[i]);
 				}
 			}
 		}
@@ -48,7 +48,7 @@ public class NetworkManager : MonoBehaviour
 	
 	void OnServerInitialized()
 	{
-//		SpawnDrone();
+		SpawnDrone();
 		Cursor.visible = false;
 	}
 	
@@ -85,13 +85,13 @@ public class NetworkManager : MonoBehaviour
 	
 	private void SpawnPlayer()
 	{
-		Network.Instantiate(playerPrefab, Vector3.up * 5, Quaternion.identity, 0);
+		Network.Instantiate(playerPrefab, Vector3.up * 20, Quaternion.identity, 0);
 	}
 	
-/*	private void SpawnDrone()
+	private void SpawnDrone()
 	{
-		Network.Instantiate(dronePrefab, Vector3.up * 5, Quarternion.identity, 0);
-	}*/
+		Network.Instantiate(dronePrefab, Vector3.up * 5, Quaternion.identity, 0);
+	}
 	
 	void OnDisconnectedFromServer(){
 		Cursor.visible = true;

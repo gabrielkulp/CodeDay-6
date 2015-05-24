@@ -15,31 +15,31 @@ function Start () {
 function Update () {
 	if (GetComponent.<NetworkView>().isMine){
 		if (Input.GetAxis("Throttle") != 0.0)	//Prevents startup stupidity
-		GetComponent.<Rigidbody>().AddForce(transform.rotation * Vector3.up * (Input.GetAxis("Throttle") + 1) * 0.5 * maxThrottle);
+			GetComponent.<Rigidbody>().AddForce(transform.rotation * Vector3.up * (Input.GetAxis("Throttle") + 1) * 0.5 * maxThrottle);
 		GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(
 		  expo.Evaluate(Input.GetAxis("Pitch")) * pitchRate * 3,
 		  expo.Evaluate(Input.GetAxis("Yaw")) * yawRate,
 		  expo.Evaluate(Input.GetAxis("Roll")) * rollRate
 		  )/* * ((Input.GetAxis("Throttle") + 1) * 0.25 + 0.75)*/);
-		
-		Debug.Log(Input.GetAxis("Throttle"));
-		
-		//Stability
-		/*
-		var torque : Vector3;
-		torque = transform.localEulerAngles;
-		if (torque.x > 180)
-			torque.x -= 360;
-		torque.y = 0;
-		if (torque.z > 180)
-			torque.z -= 360;
-		
-		GetComponent.<Rigidbody>().AddRelativeTorque(torque * -stability);
-		*/
-	//}
-	else {
+			
+			Debug.Log(Input.GetAxis("Throttle"));
+			
+			//Stability
+			/*
+			var torque : Vector3;
+			torque = transform.localEulerAngles;
+			if (torque.x > 180)
+				torque.x -= 360;
+			torque.y = 0;
+			if (torque.z > 180)
+				torque.z -= 360;
+			
+			GetComponent.<Rigidbody>().AddRelativeTorque(torque * -stability);
+			*/
+		}
+	else{
 		SyncedMovement();
-		Remember to instantiate the quad for all players initially so the movement can be synced!
+		//Remember to instantiate the quad for all players initially so the movement can be synced!
 	}
 }
 
@@ -88,7 +88,8 @@ function OnSerializeNetworkView(stream:BitStream, info:NetworkMessageInfo){ //Se
 		stream.Serialize(syncRotation);
 		stream.Serialize(syncCRotation);
 	}
-	else{
+	else
+	{
 		stream.Serialize(syncPosition);
 		stream.Serialize(syncRotation);
 		stream.Serialize(syncCRotation);
@@ -116,4 +117,3 @@ private function SyncedMovement(){
 	transform.rotation = Quaternion.Lerp(syncStartRotation, syncEndRotation, syncTime / syncDelay);
 	CRotation.rotation = Quaternion.Lerp(syncStartCRotation, syncEndCRotation, syncTime / syncDelay);
 }
-*/
