@@ -33,7 +33,7 @@ function FixedUpdate () {
 function Shoot() {
 	for (var i : int = 0; i < tips.Length; i++) {
 		var thisShot : GameObject;
-		thisShot = GameObject.Instantiate(rocckette, tips[i].transform.position, tips[i].transform.rotation);
+		thisShot = Network.Instantiate(rocckette, tips[i].transform.position, tips[i].transform.rotation, 0);
 		thisShot.GetComponent.<Rigidbody>().velocity = thisShot.transform.rotation * Vector3.forward * shootSpeed;
 		GameObject.Destroy(thisShot, 15.0);
 	}
