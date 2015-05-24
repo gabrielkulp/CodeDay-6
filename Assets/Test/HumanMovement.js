@@ -56,7 +56,6 @@ private var camY : float;
 private var movement : Vector3;
 
 var range:double = 10;
-var scripton:moneyScript;
 
 var moneyDamage:int = 1;
 var wallHeal:int = 0.1;
@@ -109,7 +108,6 @@ function Shoot(){
 
 
 var health:int = 100;
-var script:playerGameMode;
 var damage:int = 10;
 public static var damageTaken:int = 0;
 var item:int= 10;
@@ -133,13 +131,6 @@ function OnCollisionEnter(collision:Collision){
 	}
 }
 
-function Health(){
-	if (health <= 0){
-		health = 0;
-		script = GameObject.FindWithTag("Player").GetComponent(playerGameMode);
-		script.win = 0;
-	}
-}
 
 /*
 function OnTriggerStay () {
