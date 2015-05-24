@@ -17,7 +17,7 @@ function Update () {
 	  expo.Evaluate(Input.GetAxis("Pitch")) * pitchRollRate,
 	  expo.Evaluate(Input.GetAxis("Yaw")) * yawRate,
 	  expo.Evaluate(Input.GetAxis("Roll")) * pitchRollRate
-	  ) * ((Input.GetAxis("Throttle") + 1) * 0.25 + 0.75));
+	  )/* * ((Input.GetAxis("Throttle") + 1) * 0.25 + 0.75)*/);
 	
 	
 	//Stability
