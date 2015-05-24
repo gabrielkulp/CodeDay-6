@@ -6,9 +6,11 @@ function FixedUpdate () {
 	transform.rotation = Quaternion.LookRotation(GetComponent.<Rigidbody>().velocity, Vector3.up);
 }
 
-function OnTriggerEnter () {
-	var thisExplosion : GameObject;
-	thisExplosion = GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
-	GameObject.Destroy(thisExplosion, 2.0);
-	GameObject.Destroy(gameObject);
+function OnTriggerEnter (other : Collider) {
+	if (other.tag != "Turret") {
+		var thisExplosion : GameObject;
+		thisExplosion = GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
+		GameObject.Destroy(thisExplosion, 2.0);
+		GameObject.Destroy(gameObject);
+	}
 }
