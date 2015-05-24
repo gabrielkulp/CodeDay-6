@@ -13,7 +13,7 @@ function JoinScene(level:String){
 	networkHandler.SendMessage("JoinServer", null);
 }
 
-function StartScene(level:string){
+function StartScene(level:String){
 	Application.LoadLevel(level);
 	networkHandler.SendMessage("StartServer", null);
 }
