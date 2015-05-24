@@ -8,6 +8,7 @@ function Update () {
 }
 
 var networkHandler:GameObject;
+
 function JoinScene(level:String){
 	Application.LoadLevel(level);
 	networkHandler.SendMessage("JoinServer", null);
