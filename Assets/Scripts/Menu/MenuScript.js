@@ -14,12 +14,12 @@ function ExitGame()
 	Application.Quit();
 }
 
-function HostPlains()
+function Host()
 {
-	networkScript.StartScene("Plains");
+	Application.LoadLevel("HostGame");
 }
 
-function JoinPlains()
+function Join()
 {
-	networkScript.JoinScene("Plains");
+	Application.LoadLevel("JoinGame");
 }
