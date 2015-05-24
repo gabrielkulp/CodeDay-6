@@ -13,10 +13,10 @@ function Start () {
 	Initialize();
 }
 
-//function Update () {
-//	if (Input.GetAxis("Reset"))
-//		Application.LoadLevel(Application.loadedLevel);
-//}
+function Update () {
+	if (Input.GetAxis("Reset"))
+		Application.LoadLevel(Application.loadedLevel);
+}
 
 function Initialize () {
 	var time : float = Time.realtimeSinceStartup;
