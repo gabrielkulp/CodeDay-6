@@ -14,8 +14,8 @@ function Start () {
 }
 
 function Update () {
-	if (Input.GetAxis("Reset"))
-		Application.LoadLevel(Application.loadedLevel);
+//	if (Input.GetAxis("Reset"))
+//		Application.LoadLevel(Application.loadedLevel);
 }
 
 function Initialize () {

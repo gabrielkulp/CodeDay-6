@@ -24,8 +24,8 @@ function Shoot () {
 	if (index == guns.Length)
 		index = 0;
 	coolDown = 1/shotsPerSec;
-	Network.Instantiate(shot, guns[index].transform.position, guns[index].transform.rotation,0);
-	//Instantiate(shot, guns[index].transform.position, guns[index].transform.rotation);
+	//Network.Instantiate(shot, guns[index].transform.position, guns[index].transform.rotation);
+	Instantiate(shot, guns[index].transform.position, guns[index].transform.rotation);
 	guns[index].transform.GetChild(0).gameObject.SetActive(true);
 	yield;
 	guns[index].transform.GetChild(0).gameObject.SetActive(false);

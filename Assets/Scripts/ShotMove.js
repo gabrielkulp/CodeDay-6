@@ -8,8 +8,6 @@ function FixedUpdate () {
 }
 
 function OnTriggerEnter () {
-	var thisExplosion : GameObject;
-	thisExplosion = GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
-	GameObject.Destroy(thisExplosion, 2.0);
+	GameObject.Instantiate(explosion, transform.position, Quaternion.identity);
 	GameObject.Destroy(gameObject);
 }
