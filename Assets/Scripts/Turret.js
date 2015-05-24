@@ -22,6 +22,8 @@ function FixedUpdate () {
 	head.transform.localEulerAngles.y = rotation.y;
 	barrel.transform.localEulerAngles.x = rotation.x;
 	
+	Debug.Log(coolDown);
+	
 	if (coolDown > 0.0)
 		coolDown -= Time.deltaTime;
 	else

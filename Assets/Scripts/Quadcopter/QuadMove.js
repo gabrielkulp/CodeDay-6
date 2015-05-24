@@ -37,9 +37,9 @@ function Update () {
 		GetComponent.<Rigidbody>().AddRelativeTorque(torque * -stability);
 		*/
 	//}
-	else {
+}  else {
 		SyncedMovement();
-		Remember to instantiate the quad for all players initially so the movement can be synced!
+		//Remember to instantiate the quad for all players initially so the movement can be synced!
 	}
 }
 
@@ -116,4 +116,3 @@ private function SyncedMovement(){
 	transform.rotation = Quaternion.Lerp(syncStartRotation, syncEndRotation, syncTime / syncDelay);
 	CRotation.rotation = Quaternion.Lerp(syncStartCRotation, syncEndCRotation, syncTime / syncDelay);
 }
-*/
