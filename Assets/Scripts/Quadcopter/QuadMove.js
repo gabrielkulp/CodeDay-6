@@ -13,7 +13,7 @@ function Start () {
 }
 
 function Update () {
-	//if (GetComponent.<NetworkView>().isMine){
+	if (GetComponent.<NetworkView>().isMine){
 		if (Input.GetAxis("Throttle") != 0.0)	//Prevents startup stupidity
 		GetComponent.<Rigidbody>().AddForce(transform.rotation * Vector3.up * (Input.GetAxis("Throttle") + 1) * 0.5 * maxThrottle);
 		GetComponent.<Rigidbody>().AddRelativeTorque(Vector3(
@@ -37,10 +37,10 @@ function Update () {
 		GetComponent.<Rigidbody>().AddRelativeTorque(torque * -stability);
 		*/
 	//}
-	//else {
-		//SyncedMovement();
-		//Remember to instantiate the quad for all players initially so the movement can be synced!
-	//}
+	else {
+		SyncedMovement();
+		Remember to instantiate the quad for all players initially so the movement can be synced!
+	}
 }
 
 
@@ -59,7 +59,7 @@ function OnTriggerExit () {
 	currentSpeed = flySpeed;
 	onGround = false;
 	}
-}
+}*/
 
 var lastSynchronizationTime:float = 0f;
 var syncDelay:float = 0f;
